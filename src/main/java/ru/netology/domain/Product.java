@@ -3,64 +3,75 @@ package ru.netology.domain;
 import java.util.Objects;
 
 public class Product {
-  private int id;
-  private String name;
-  private int price;
+    int id;
+    String title;
+    int price;
 
-  public Product() {
-  }
+    public Product() {
+    }
 
-  public Product(int id, String name, int price) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-  }
+    public boolean matches(Product product, String search) {
+        if (product.getTitle().equalsIgnoreCase(search)) {
+            return true;
+        }
+        return false;
+    }
 
-  public int getId() {
-    return id;
-  }
+    public Product(int id, String title, int price) {
+        this.id = id;
+        this.title = title;
+        this.price = price;
+    }
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    public String getTitle() {
+        return title;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public int getPrice() {
-    return price;
-  }
+    public String getName() {
+        return title;
+    }
 
-  public void setPrice(int price) {
-    this.price = price;
-  }
+    public void setName(String name) {
+        this.title = title;
+    }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    Product product = (Product) o;
-    return id == product.id &&
-        price == product.price &&
-        Objects.equals(name, product.name);
-  }
+    public int getPrice() {
+        return price;
+    }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, name, price);
-  }
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
-  @Override
-  public String toString() {
-    return "Product{" +
-        "id=" + id +
-        ", name='" + name + '\'' +
-        ", price=" + price +
-        '}';
-  }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return id == product.id &&
+                price == product.price &&
+                Objects.equals(title, product.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, price);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
