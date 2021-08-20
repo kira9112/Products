@@ -1,4 +1,4 @@
-package ru.netology.manager;
+package manager;
 
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;

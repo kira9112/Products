@@ -3,19 +3,14 @@ package ru.netology.domain;
 import java.util.Objects;
 
 public class Product {
-    int id;
-    String title;
-    int price;
+    private int id;
+    private String title;
+    private int price;
 
     public Product() {
     }
 
-    public boolean matches(Product product, String search) {
-        if (product.getTitle().equalsIgnoreCase(search)) {
-            return true;
-        }
-        return false;
-    }
+
 
     public Product(int id, String title, int price) {
         this.id = id;
