@@ -1,6 +1,7 @@
 package ru.netology.manager;
 
 
+import manager.ProductManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
